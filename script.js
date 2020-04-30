@@ -2,10 +2,10 @@
 const calculate = (n1, operator, n2) => {
     const firstNum = parseFloat(n1)
     const secondNum = parseFloat(n2)
-    if (operator === 'add') return firstNum + secondNum
-    if (operator === 'subtract') return firstNum - secondNum
-    if (operator === 'multiply') return firstNum * secondNum
-    if (operator === 'divide') return firstNum / secondNum
+    if (operator === 'add') return (firstNum + secondNum).toFixed(5)
+    if (operator === 'subtract') return (firstNum - secondNum).toFixed(5)
+    if (operator === 'multiply') return (firstNum * secondNum).toFixed(5)
+    if (operator === 'divide') return (firstNum / secondNum).toFixed(5)
   }
   
   const getKeyType = key => {
@@ -40,8 +40,8 @@ const calculate = (n1, operator, n2) => {
     }
   
     if (keyType === 'decimal') {
-      if (!displayedNum.includes('.')) return displayedNum + '.'
       if (previousKeyType === 'operator' || previousKeyType === 'calculate') return '0.'
+      if (!displayedNum.includes('.')) return displayedNum + '.'
       return displayedNum
     }
   
