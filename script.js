@@ -20,7 +20,6 @@ const calculate = (n1, operator, n2) => {
       action === 'multiply' ||
       action === 'divide'
     ) return 'operator'
-    // For everything else, return the action
     return action
   }
   
