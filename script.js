@@ -2,11 +2,14 @@
 const calculate = (n1, operator, n2) => {
     const firstNum = parseFloat(n1)
     const secondNum = parseFloat(n2)
-    if (operator === 'add') return (firstNum + secondNum).toFixed(5)
-    if (operator === 'subtract') return (firstNum - secondNum).toFixed(5)
-    if (operator === 'multiply') return (firstNum * secondNum).toFixed(5)
-    if (operator === 'divide') return (firstNum / secondNum).toFixed(5)
-  }
+    let answer = 0
+    if (operator === 'add') answer = (firstNum + secondNum)
+    if (operator === 'subtract') answer = (firstNum - secondNum)
+    if (operator === 'multiply') answer = (firstNum * secondNum)
+    if (operator === 'divide') answer = (firstNum / secondNum)
+
+    return (answer % 1 === 0) ? answer : answer.toFixed(5)
+}
   
   const getKeyType = key => {
     const { action } = key.dataset
